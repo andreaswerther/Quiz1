@@ -2,153 +2,95 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Physik Quiz 1 – Photonen & Licht</title>
+  <title>Quiz 1 – Photonen & Licht</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 20px; }
-    .container { background: white; max-width: 800px; margin: auto; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    h1, h2 { color: #333; }
-    .task { margin-bottom: 40px; }
-    textarea { width: 100%; height: 40px; margin-bottom: 10px; font-size: 14px; }
-    button { padding: 10px 15px; font-size: 14px; cursor: pointer; margin-top: 5px; }
-    .video-container { margin-top: 10px; display: none; }
-    iframe { width: 100%; height: 315px; border: none; border-radius: 5px; }
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 20px; }
+    .container { max-width: 800px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h1 { color: #222; }
+    .task { margin-bottom: 30px; }
+    textarea { width: 100%; height: 40px; font-size: 14px; margin-top: 5px; }
+    button { margin-top: 5px; padding: 8px 12px; font-size: 14px; }
+    .feedback { display: none; margin-top: 10px; background: #eef; padding: 10px; border-radius: 5px; }
   </style>
   <script>
-    function showSolution(id, text) {
-      const solution = document.getElementById("solution_" + id);
-      solution.textContent = "Richtige Antwort: " + text;
-      solution.style.display = "block";
-    }
-    function showVideo(id) {
-      const vid = document.getElementById("video_" + id);
-      vid.style.display = "block";
+    function showSolution(id, solution) {
+      const elem = document.getElementById("solution_" + id);
+      elem.innerText = "Richtige Antwort: " + solution;
+      elem.style.display = "block";
     }
   </script>
 </head>
 <body>
 <div class="container">
-  <h1>Physik Quiz 1 – Photonen & Licht</h1>
+  <h1>Quiz 1 – Photonen & Licht</h1>
 
     <div class="task">
-      <h2>Frage 1</h2>
-      <p>Was beschreibt die Formel E = h * f?</p>
-      <textarea placeholder="Antwort eingeben..."></textarea><br/>
-      <button onclick="showSolution(1, 'Die Energie eines Photons')">Lösung anzeigen</button>
-      <button onclick="showVideo(1)">Erklärvideo anzeigen</button>
-      <div class="video-container" id="video_1">
-        <iframe src="https://www.youtube.com/embed/9_JoTCVitWU" allowfullscreen></iframe>
-      </div>
-      <div class="feedback" id="solution_1" style="display:none; margin-top:10px; background:#eef; padding:10px; border-radius:5px;"></div>
+      <strong>Frage 1:</strong> Was beschreibt die Formel E = h * f?<br>
+      <textarea placeholder="Antwort eingeben..."></textarea><br>
+      <button onclick="showSolution(1, `Die Energie eines Photons`)">Lösung anzeigen</button>
+      <div class="feedback" id="solution_1"></div>
     </div>
-    
+
     <div class="task">
-      <h2>Frage 2</h2>
-      <p>Welche Einheit hat die Energie eines Photons?</p>
-      <textarea placeholder="Antwort eingeben..."></textarea><br/>
-      <button onclick="showSolution(2, 'Joule')">Lösung anzeigen</button>
-      <button onclick="showVideo(2)">Erklärvideo anzeigen</button>
-      <div class="video-container" id="video_2">
-        <iframe src="https://www.youtube.com/embed/9_JoTCVitWU" allowfullscreen></iframe>
-      </div>
-      <div class="feedback" id="solution_2" style="display:none; margin-top:10px; background:#eef; padding:10px; border-radius:5px;"></div>
+      <strong>Frage 2:</strong> Welche Einheit hat die Energie eines Photons?<br>
+      <textarea placeholder="Antwort eingeben..."></textarea><br>
+      <button onclick="showSolution(2, `Joule`)">Lösung anzeigen</button>
+      <div class="feedback" id="solution_2"></div>
     </div>
-    
+
     <div class="task">
-      <h2>Frage 3</h2>
-      <p>Wie verändert sich die Photonenenergie, wenn die Frequenz steigt?</p>
-      <textarea placeholder="Antwort eingeben..."></textarea><br/>
-      <button onclick="showSolution(3, 'Sie steigt')">Lösung anzeigen</button>
-      <button onclick="showVideo(3)">Erklärvideo anzeigen</button>
-      <div class="video-container" id="video_3">
-        <iframe src="https://www.youtube.com/embed/9_JoTCVitWU" allowfullscreen></iframe>
-      </div>
-      <div class="feedback" id="solution_3" style="display:none; margin-top:10px; background:#eef; padding:10px; border-radius:5px;"></div>
+      <strong>Frage 3:</strong> Wie verändert sich die Photonenenergie, wenn die Frequenz steigt?<br>
+      <textarea placeholder="Antwort eingeben..."></textarea><br>
+      <button onclick="showSolution(3, `Sie steigt`)">Lösung anzeigen</button>
+      <div class="feedback" id="solution_3"></div>
     </div>
-    
+
     <div class="task">
-      <h2>Frage 4</h2>
-      <p>Was ist UV-Strahlung im Vergleich zu sichtbarem Licht?</p>
-      <textarea placeholder="Antwort eingeben..."></textarea><br/>
-      <button onclick="showSolution(4, 'Kürzerwellig und energiereicher')">Lösung anzeigen</button>
-      <button onclick="showVideo(4)">Erklärvideo anzeigen</button>
-      <div class="video-container" id="video_4">
-        <iframe src="https://www.youtube.com/embed/QUN-49Iu2so" allowfullscreen></iframe>
-      </div>
-      <div class="feedback" id="solution_4" style="display:none; margin-top:10px; background:#eef; padding:10px; border-radius:5px;"></div>
+      <strong>Frage 4:</strong> Was ist UV-Strahlung im Vergleich zu sichtbarem Licht?<br>
+      <textarea placeholder="Antwort eingeben..."></textarea><br>
+      <button onclick="showSolution(4, `Kürzerwellig und energiereicher`)">Lösung anzeigen</button>
+      <div class="feedback" id="solution_4"></div>
     </div>
-    
+
     <div class="task">
-      <h2>Frage 5</h2>
-      <p>Welche Aussage zu Photonen ist falsch?</p>
-      <textarea placeholder="Antwort eingeben..."></textarea><br/>
-      <button onclick="showSolution(5, 'Sie bewegen sich langsamer als Licht')">Lösung anzeigen</button>
-      <button onclick="showVideo(5)">Erklärvideo anzeigen</button>
-      <div class="video-container" id="video_5">
-        <iframe src="https://www.youtube.com/embed/9_JoTCVitWU" allowfullscreen></iframe>
-      </div>
-      <div class="feedback" id="solution_5" style="display:none; margin-top:10px; background:#eef; padding:10px; border-radius:5px;"></div>
+      <strong>Frage 5:</strong> Welche Aussage zu Photonen ist falsch?<br>
+      <textarea placeholder="Antwort eingeben..."></textarea><br>
+      <button onclick="showSolution(5, `Sie bewegen sich langsamer als Licht`)">Lösung anzeigen</button>
+      <div class="feedback" id="solution_5"></div>
     </div>
-    
+
     <div class="task">
-      <h2>Frage 6</h2>
-      <p>Was versteht man unter Spektralfarben?</p>
-      <textarea placeholder="Antwort eingeben..."></textarea><br/>
-      <button onclick="showSolution(6, 'Die Farben eines Regenbogens')">Lösung anzeigen</button>
-      <button onclick="showVideo(6)">Erklärvideo anzeigen</button>
-      <div class="video-container" id="video_6">
-        <iframe src="https://www.youtube.com/embed/M0Uu9wGaMQI" allowfullscreen></iframe>
-      </div>
-      <div class="feedback" id="solution_6" style="display:none; margin-top:10px; background:#eef; padding:10px; border-radius:5px;"></div>
+      <strong>Frage 6:</strong> Was versteht man unter Spektralfarben?<br>
+      <textarea placeholder="Antwort eingeben..."></textarea><br>
+      <button onclick="showSolution(6, `Die Farben eines Regenbogens`)">Lösung anzeigen</button>
+      <div class="feedback" id="solution_6"></div>
     </div>
-    
+
     <div class="task">
-      <h2>Frage 7</h2>
-      <p>Welche Farbe hat die niedrigste Photonenenergie?</p>
-      <textarea placeholder="Antwort eingeben..."></textarea><br/>
-      <button onclick="showSolution(7, 'Rot')">Lösung anzeigen</button>
-      <button onclick="showVideo(7)">Erklärvideo anzeigen</button>
-      <div class="video-container" id="video_7">
-        <iframe src="https://www.youtube.com/embed/M0Uu9wGaMQI" allowfullscreen></iframe>
-      </div>
-      <div class="feedback" id="solution_7" style="display:none; margin-top:10px; background:#eef; padding:10px; border-radius:5px;"></div>
+      <strong>Frage 7:</strong> Welche Farbe hat die niedrigste Photonenenergie?<br>
+      <textarea placeholder="Antwort eingeben..."></textarea><br>
+      <button onclick="showSolution(7, `Rot`)">Lösung anzeigen</button>
+      <div class="feedback" id="solution_7"></div>
     </div>
-    
+
     <div class="task">
-      <h2>Frage 8</h2>
-      <p>Welche Strahlung ist nicht sichtbar, aber energiereicher als sichtbares Licht?</p>
-      <textarea placeholder="Antwort eingeben..."></textarea><br/>
-      <button onclick="showSolution(8, 'UV')">Lösung anzeigen</button>
-      <button onclick="showVideo(8)">Erklärvideo anzeigen</button>
-      <div class="video-container" id="video_8">
-        <iframe src="https://www.youtube.com/embed/QUN-49Iu2so" allowfullscreen></iframe>
-      </div>
-      <div class="feedback" id="solution_8" style="display:none; margin-top:10px; background:#eef; padding:10px; border-radius:5px;"></div>
+      <strong>Frage 8:</strong> Welche Strahlung ist nicht sichtbar, aber energiereicher als sichtbares Licht?<br>
+      <textarea placeholder="Antwort eingeben..."></textarea><br>
+      <button onclick="showSolution(8, `UV`)">Lösung anzeigen</button>
+      <div class="feedback" id="solution_8"></div>
     </div>
-    
+
     <div class="task">
-      <h2>Frage 9</h2>
-      <p>Wie nennt man die Konstante h in der Formel E = h * f?</p>
-      <textarea placeholder="Antwort eingeben..."></textarea><br/>
-      <button onclick="showSolution(9, 'Planck-Konstante')">Lösung anzeigen</button>
-      <button onclick="showVideo(9)">Erklärvideo anzeigen</button>
-      <div class="video-container" id="video_9">
-        <iframe src="https://www.youtube.com/embed/9_JoTCVitWU" allowfullscreen></iframe>
-      </div>
-      <div class="feedback" id="solution_9" style="display:none; margin-top:10px; background:#eef; padding:10px; border-radius:5px;"></div>
+      <strong>Frage 9:</strong> Wie nennt man die Konstante h in der Formel E = h * f?<br>
+      <textarea placeholder="Antwort eingeben..."></textarea><br>
+      <button onclick="showSolution(9, `Planck-Konstante`)">Lösung anzeigen</button>
+      <div class="feedback" id="solution_9"></div>
     </div>
-    
+
     <div class="task">
-      <h2>Frage 10</h2>
-      <p>Welche Schutzmaßnahmen sind bei UV-Strahlung wichtig?</p>
-      <textarea placeholder="Antwort eingeben..."></textarea><br/>
-      <button onclick="showSolution(10, 'Sonnencreme, Schutzkleidung, Brille')">Lösung anzeigen</button>
-      <button onclick="showVideo(10)">Erklärvideo anzeigen</button>
-      <div class="video-container" id="video_10">
-        <iframe src="https://www.youtube.com/embed/QUN-49Iu2so" allowfullscreen></iframe>
-      </div>
-      <div class="feedback" id="solution_10" style="display:none; margin-top:10px; background:#eef; padding:10px; border-radius:5px;"></div>
+      <strong>Frage 10:</strong> Welche Schutzmaßnahmen sind bei UV-Strahlung wichtig?<br>
+      <textarea placeholder="Antwort eingeben..."></textarea><br>
+      <button onclick="showSolution(10, `Sonnencreme, Schutzkleidung, Brille`)">Lösung anzeigen</button>
+      <div class="feedback" id="solution_10"></div>
     </div>
-    
-</div>
-</body>
-</html>
+</div></body></html>
